@@ -1,0 +1,62 @@
+/* ============================================================
+   variables.css — Design tokens & CSS custom properties
+   ============================================================ */
+
+/* ── Nav height token (used for hero padding-top) ── */
+:root {
+  --nav-h: 80px;
+
+  /* Font families (theme-independent) */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* Easing (theme-independent) */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ══ DARK MODE (default) ════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --bg:      #080808;
+  --bg-2:    #0f0f0f;
+  --bg-3:    #161616;
+  --surface: #1a1a1a;
+  --border:  rgba(255, 255, 255, 0.07);
+  --text:    #e8e8e8;
+  --muted:   #666666;
+  --faint:   #333333;
+
+  /* Dark mode: bright lime works on dark bg */
+  --accent:        #c8ff00;
+  --accent-dim:    #8aad00;
+  --accent-hover:  #d9ff33;
+  --accent-text:   #080808;   /* text ON accent button */
+  --accent-label:  #c8ff00;   /* section labels, eyebrow */
+  --accent-border: rgba(200, 255, 0, 0.25);
+
+  --nav-scrolled-bg: rgba(8, 8, 8, 0.85);
+}
+
+/* ══ LIGHT MODE ════════════════════════════════════════════ */
+[data-theme="light"] {
+  --bg:      #f5f5f0;
+  --bg-2:    #eeede8;
+  --bg-3:    #e5e4df;
+  --surface: #dddcd7;
+  --border:  rgba(0, 0, 0, 0.09);
+  --text:    #0f0f0f;
+  --muted:   #555555;
+  --faint:   #c0bfba;
+
+  /* Light mode: dark olive/green — readable on pale bg */
+  --accent:        #5a7a00;   /* dark olive green — readable on #f5f5f0 */
+  --accent-dim:    #3d5400;
+  --accent-hover:  #6e9600;
+  --accent-text:   #ffffff;   /* text ON accent button */
+  --accent-label:  #5a7a00;   /* section labels */
+  --accent-border: rgba(90, 122, 0, 0.3);
+
+  --nav-scrolled-bg: rgba(245, 245, 240, 0.88);
+}

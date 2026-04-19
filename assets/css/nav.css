@@ -1,0 +1,154 @@
+/* ============================================================
+   nav.css — Navigation bar styles
+   ============================================================ */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: var(--nav-h);
+  transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s;
+}
+
+nav.scrolled {
+  background: var(--nav-scrolled-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Logo ── */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1;
+}
+.nav-logo:hover { color: var(--text); }
+
+/* ── Links ── */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out);
+}
+
+.nav-links a:hover          { color: var(--text); }
+.nav-links a:hover::after   { width: 100%; }
+
+/* ── CTA button ── */
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text) !important;
+  background: var(--accent);
+  padding: 0.55rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.3s, transform 0.2s var(--ease-spring) !important;
+}
+.nav-cta:hover       { background: var(--accent-hover) !important; transform: scale(1.04) !important; }
+.nav-cta::after      { display: none !important; }
+
+/* ── Theme Switch ── */
+.theme-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.theme-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--faint);
+  border: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.theme-track::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.3s var(--ease-spring);
+}
+
+input:checked + .theme-track {
+  background: var(--surface);
+}
+
+input:checked + .theme-track::after {
+  transform: translateX(24px);
+}
+
+.theme-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.theme-icon {
+  font-size: 12px;
+  line-height: 1;
+  transition: opacity 0.3s;
+}
+
+/* ── Mobile hamburger ── */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px; height: 1.5px;
+  background: var(--text);
+  margin: 5px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+

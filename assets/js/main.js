@@ -1,0 +1,19 @@
+/* ============================================================
+   main.js — Application entry point
+   Imports and initialises all modules on DOMContentLoaded
+   ============================================================ */
+
+import { initCursor }                         from './cursor.js';
+import { initScrollReveal, initSmoothScroll } from './scroll.js';
+import { initNav }                            from './nav.js';
+import { initTheme }                          from './theme.js';
+import { initHero }                           from './hero.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initHero();
+  initCursor();
+  initScrollReveal();
+  initSmoothScroll();
+  initNav();
+});

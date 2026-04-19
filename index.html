@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EM. — Frontend Developer portfolio. Crafting fast, beautiful, and accessible web experiences." />
+  <title>EM. — Frontend Developer</title>
+
+  <!-- Anti-flash: apply saved theme before first paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('em-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- ── Custom Cursor ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">EM.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li>
+        <!-- Theme switch -->
+        <label class="theme-switch" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="theme-track"></span>
+          <span class="theme-icons">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-icon">🌙</span>
+          </span>
+        </label>
+      </li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════
+       HERO — TextRotate + Floating Parallax
+  ════════════════════════════════════════════ -->
+  <section id="hero">
+
+    <!-- Floating parallax images — absolutely positioned -->
+    <div id="floating-layer" aria-hidden="true">
+      <!-- Top-left cluster -->
+      <div class="fl-img" data-depth="0.5" style="top:18%;left:2%">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80&fit=crop" alt="" style="width:110px;height:80px;transform:rotate(-3deg)">
+      </div>
+      <div class="fl-img" data-depth="1.2" style="top:4%;left:10%">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&q=80&fit=crop" alt="" style="width:200px;height:150px;transform:rotate(-12deg)">
+      </div>
+      <div class="fl-img" data-depth="2.5" style="top:72%;left:5%">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80&fit=crop" alt="" style="width:180px;height:180px;transform:rotate(-4deg)">
+      </div>
+      <!-- Top-right cluster -->
+      <div class="fl-img" data-depth="1.5" style="top:2%;left:82%">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80&fit=crop" alt="" style="width:210px;height:170px;transform:rotate(6deg)">
+      </div>
+      <div class="fl-img" data-depth="0.8" style="top:68%;left:80%">
+        <img src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=500&q=80&fit=crop" alt="" style="width:220px;height:220px;transform:rotate(19deg)">
+      </div>
+    </div>
+
+    <!-- Centre content -->
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        <span class="hero-line-top">Build your</span>
+        <span class="hero-line-mid">
+          <span>portfolio </span><span id="text-rotate-wrap"><span id="text-rotate-el" class="tr-word"></span></span>
+        </span>
+      </h1>
+
+      <p class="hero-sub">
+        A growing collection of hand-crafted web experiences.<br>
+        Clean code, pixel-perfect design, zero dependencies.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="hero-btn-primary">View Work <span>→</span></a>
+        <a href="#contact"  class="hero-btn-ghost">Hire Me <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">HTML <span>✦</span></span>
+        <span class="marquee-item">CSS <span>✦</span></span>
+        <span class="marquee-item">JavaScript <span>✦</span></span>
+        <span class="marquee-item">Responsive Design <span>✦</span></span>
+        <span class="marquee-item">Figma <span>✦</span></span>
+        <span class="marquee-item">Git <span>✦</span></span>
+        <span class="marquee-item">Web Animation <span>✦</span></span>
+        <span class="marquee-item">UI Engineering <span>✦</span></span>
+        <span class="marquee-item">HTML <span>✦</span></span>
+        <span class="marquee-item">CSS <span>✦</span></span>
+        <span class="marquee-item">JavaScript <span>✦</span></span>
+        <span class="marquee-item">Responsive Design <span>✦</span></span>
+        <span class="marquee-item">Figma <span>✦</span></span>
+        <span class="marquee-item">Git <span>✦</span></span>
+        <span class="marquee-item">Web Animation <span>✦</span></span>
+        <span class="marquee-item">UI Engineering <span>✦</span></span>
+      </div>
+    </div>
+
+  </section>
+  <!-- ════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-avatar reveal">
+        <img
+          src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80&fit=crop"
+          alt="Elvin — Frontend Developer"
+          loading="lazy"
+        />
+      </div>
+      <div class="about-text">
+        <p class="section-label reveal">About Me</p>
+        <h2 class="section-title reveal reveal-delay-1">WHO<br>I AM.</h2>
+        <p class="reveal reveal-delay-2">
+          I'm Elvin Morgan, a frontend developer who lives at the intersection of design and engineering.
+          I obsess over details — the kind most people don't notice, but everyone feels.
+        </p>
+        <p class="reveal reveal-delay-3">
+          With a strong foundation in semantic HTML, modern CSS, and vanilla JavaScript,
+          I build interfaces that load fast, feel smooth, and look unforgettable.
+          Every pixel is intentional.
+        </p>
+        <div class="about-tags reveal reveal-delay-4">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Git</span>
+          <span class="tag">GSAP</span>
+          <span class="tag">Webpack</span>
+          <span class="tag">Accessibility</span>
+          <span class="tag">Performance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SKILLS
+  ════════════════════════════════════════════ -->
+  <section id="skills">
+    <p class="section-label reveal">What I Do</p>
+    <h2 class="section-title reveal reveal-delay-1">SKILLS.</h2>
+    <div class="skills-grid">
+      <div class="skill-cell reveal">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">HTML &amp; CSS</div>
+        <div class="skill-desc">Semantic markup, CSS Grid/Flexbox, custom properties, animations, responsive design.</div>
+      </div>
+      <div class="skill-cell reveal reveal-delay-1">
+        <div class="skill-icon">🧠</div>
+        <div class="skill-name">JavaScript</div>
+        <div class="skill-desc">ES2024+, DOM manipulation, async/await, Intersection Observer, Web APIs.</div>
+      </div>
+      <div class="skill-cell reveal reveal-delay-2">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-name">UI Design</div>
+        <div class="skill-desc">Figma, design systems, typography, color theory, pixel-perfect implementation.</div>
+      </div>
+      <div class="skill-cell reveal reveal-delay-3">
+        <div class="skill-icon">🚀</div>
+        <div class="skill-name">Performance</div>
+        <div class="skill-desc">Lighthouse 90+, lazy loading, critical CSS, image optimization, Core Web Vitals.</div>
+      </div>
+      <div class="skill-cell reveal">
+        <div class="skill-icon">♿</div>
+        <div class="skill-name">Accessibility</div>
+        <div class="skill-desc">WCAG 2.1 AA, ARIA roles, keyboard navigation, screen reader support.</div>
+      </div>
+      <div class="skill-cell reveal reveal-delay-1">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">Tooling</div>
+        <div class="skill-desc">Git, npm, Webpack, Vite, browser devtools, debugging and profiling.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       PROJECTS
+  ════════════════════════════════════════════ -->
+  <section id="projects">
+    <p class="section-label reveal">Selected Work</p>
+    <h2 class="section-title reveal reveal-delay-1">PROJECTS.</h2>
+    <div class="projects-list">
+
+      <!-- Project 01 -->
+      <article class="project-item">
+        <div class="project-info reveal">
+          <p class="project-number">01</p>
+          <h3 class="project-name">Project Alpha</h3>
+          <p class="project-desc">A complete e-commerce UI redesign focused on conversion optimization and mobile-first experience. Reduced cart abandonment by 34%.</p>
+          <div class="project-tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Figma</span>
+          </div>
+          <a href="#" class="project-link">
+            View Project
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="project-img reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80&fit=crop"
+            alt="Project Alpha — E-commerce UI"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Project 02 -->
+      <article class="project-item">
+        <div class="project-info reveal">
+          <p class="project-number">02</p>
+          <h3 class="project-name">Project Beta</h3>
+          <p class="project-desc">Real-time weather dashboard using public APIs. Features animated data visualizations, geolocation, and offline support via Service Workers.</p>
+          <div class="project-tech">
+            <span>JavaScript</span><span>CSS Grid</span><span>REST API</span><span>PWA</span>
+          </div>
+          <a href="#" class="project-link">
+            View Project
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="project-img reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80&fit=crop"
+            alt="Project Beta — Weather Dashboard"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <!-- Project 03 -->
+      <article class="project-item">
+        <div class="project-info reveal">
+          <p class="project-number">03</p>
+          <h3 class="project-name">Project Gamma</h3>
+          <p class="project-desc">Open-source portfolio template built for developers. 1,200+ GitHub stars. Fully customizable, zero dependencies, Lighthouse 100 score.</p>
+          <div class="project-tech">
+            <span>HTML</span><span>CSS</span><span>Animation</span><span>Open Source</span>
+          </div>
+          <a href="#" class="project-link">
+            View Project
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="project-img reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80&fit=crop"
+            alt="Project Gamma — Portfolio Template"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="contact-inner">
+      <p class="section-label reveal">Get In Touch</p>
+      <h2 class="contact-headline reveal reveal-delay-1">
+        LET'S<br>WORK<br><span>TOGETHER.</span>
+      </h2>
+      <p class="contact-sub reveal reveal-delay-2">
+        Have a project in mind or looking for a developer to join your team?
+        I'd love to hear from you.
+      </p>
+      <div class="contact-links reveal reveal-delay-3">
+        <a href="mailto:hello@em.dev" class="contact-btn primary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Send Email
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-btn ghost">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-btn ghost">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer>
+    <p class="footer-copy">© 2026 EM. — All rights reserved</p>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+  <!-- JS Modules -->
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+</html>
