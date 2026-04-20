@@ -1,33 +1,55 @@
 /* ============================================================
-   nav.js — Navigation scroll effect & mobile toggle
+   nav.js — Navigation: scroll effect, mobile toggle, resize fix
    ============================================================ */
 
 export function initNav() {
   const nav    = document.getElementById('nav');
-  const toggle = document.querySelector('.nav-toggle');
-  const links  = document.querySelector('.nav-links');
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.getElementById('nav-links');
 
   if (!nav) return;
 
-  // Scrolled state
+  /* ── Scrolled glass effect ── */
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  // Mobile toggle (basic show/hide)
+  /* ── Mobile burger toggle ── */
   if (toggle && links) {
     toggle.addEventListener('click', () => {
-      const isOpen = links.style.display === 'flex';
-      links.style.display = isOpen ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '100%';
-      links.style.left = '0';
-      links.style.right = '0';
-      links.style.background = 'rgba(8,8,8,0.97)';
-      links.style.padding = '2rem';
-      links.style.gap = '1.5rem';
-      links.style.borderBottom = '1px solid rgba(255,255,255,0.07)';
+      const isOpen = links.classList.contains('mobile-open');
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
+
+    /* Close when a link is clicked */
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    /* ── Resize fix: if window grows to desktop width, reset mobile state ── */
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        closeMenu(true); // silent close — no animation, just reset
+      }
+    }, { passive: true });
+  }
+
+  function openMenu() {
+    links.classList.add('mobile-open');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // prevent scroll while menu open
+  }
+
+  function closeMenu(silent = false) {
+    links.classList.remove('mobile-open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   }
 }

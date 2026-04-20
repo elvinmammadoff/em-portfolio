@@ -37,26 +37,32 @@
   ════════════════════════════════════════════ -->
   <nav id="nav">
     <a href="#" class="nav-logo">EM.</a>
-    <ul class="nav-links">
+
+    <!-- Desktop nav links (hidden on mobile) -->
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Work</a></li>
-      <li>
-        <!-- Theme switch -->
-        <label class="theme-switch" aria-label="Toggle light/dark mode" title="Toggle theme">
-          <input type="checkbox" id="theme-toggle" />
-          <span class="theme-track"></span>
-          <span class="theme-icons">
-            <span class="theme-icon">☀️</span>
-            <span class="theme-icon">🌙</span>
-          </span>
-        </label>
-      </li>
-      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+
+    <!-- Right side controls — always visible -->
+    <div class="nav-controls">
+      <!-- Theme switch -->
+      <label class="theme-switch" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="theme-track"></span>
+        <span class="theme-icons">
+          <span class="theme-icon">☀️</span>
+          <span class="theme-icon">🌙</span>
+        </span>
+      </label>
+      <!-- Hire Me CTA -->
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <!-- Burger (mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ════════════════════════════════════════════
@@ -66,22 +72,20 @@
 
     <!-- Floating parallax images — absolutely positioned -->
     <div id="floating-layer" aria-hidden="true">
-      <!-- Top-left cluster -->
-      <div class="fl-img" data-depth="0.5" style="top:18%;left:2%">
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80&fit=crop" alt="" style="width:110px;height:80px;transform:rotate(-3deg)">
+      <div class="fl-img" data-depth="0.6" style="top:25%;left:17%">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80&fit=crop" alt="" style="width:120px;height:90px;transform:rotate(-3deg)">
       </div>
-      <div class="fl-img" data-depth="1.2" style="top:4%;left:10%">
-        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&q=80&fit=crop" alt="" style="width:200px;height:150px;transform:rotate(-12deg)">
+      <div class="fl-img" data-depth="1.4" style="top:10%;left:20%">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&q=80&fit=crop" alt="" style="width:230px;height:175px;transform:rotate(-11deg)">
       </div>
-      <div class="fl-img" data-depth="2.5" style="top:72%;left:5%">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80&fit=crop" alt="" style="width:180px;height:180px;transform:rotate(-4deg)">
+      <div class="fl-img" data-depth="2.2" style="top:70%;left:20%">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80&fit=crop" alt="" style="width:185px;height:185px;transform:rotate(-4deg)">
       </div>
-      <!-- Top-right cluster -->
-      <div class="fl-img" data-depth="1.5" style="top:2%;left:82%">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80&fit=crop" alt="" style="width:210px;height:170px;transform:rotate(6deg)">
+      <div class="fl-img" data-depth="1.6" style="top:15%;right:15%;left:auto">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&q=80&fit=crop" alt="" style="width:230px;height:175px;transform:rotate(7deg)">
       </div>
-      <div class="fl-img" data-depth="0.8" style="top:68%;left:80%">
-        <img src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=500&q=80&fit=crop" alt="" style="width:220px;height:220px;transform:rotate(19deg)">
+      <div class="fl-img" data-depth="0.9" style="top:65%;right:20%;left:auto">
+        <img src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=500&q=80&fit=crop" alt="" style="width:210px;height:210px;transform:rotate(18deg)">
       </div>
     </div>
 
