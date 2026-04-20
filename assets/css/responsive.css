@@ -43,3 +43,22 @@
   .contact-headline { font-size: clamp(3rem, 14vw, 5rem); }
   .skills-grid { grid-template-columns: 1fr; }
 }
+
+/* ── New sections mobile ── */
+@media (max-width: 900px) {
+  .pricing-grid      { grid-template-columns: 1fr; max-width: 420px; }
+  .price-card.featured { transform: none; }
+  .price-card.featured:hover { transform: translateY(-6px); }
+
+  .blog-grid         { grid-template-columns: 1fr; }
+
+  .contact-wrapper   { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row          { grid-template-columns: 1fr; }
+  .contact-sub       { max-width: 100%; }
+
+  .footer-inner      { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2rem; }
+  .footer-bottom     { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.2rem 1.5rem; }
+
+  .about-stats       { gap: 0.8rem; }
+  .stat-box          { min-width: 80px; }
+}
